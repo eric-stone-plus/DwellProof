@@ -1,0 +1,23 @@
+{
+  "schema_version": "official-source-check.v1",
+  "source_url": "https://www.stats.gov.cn/sj/zxfb/202605/t20260518_1963715.html",
+  "source_authority": "National Bureau of Statistics of China",
+  "source_sha256": "1b3ea998c4f4f4364e23c016053dc1512050941185f16da986af7931c903c608",
+  "retrieved_at": "2026-07-12T18:30:00+08:00",
+  "observation_date": "2026-04-01",
+  "comparison_bases": {
+    "mom_index": "previous_month=100",
+    "yoy_index": "previous_year_month=100"
+  },
+  "local_file": "housealice/70city_expanded.csv",
+  "current_local_file": "legacy/70city_expanded.csv",
+  "path_migration": "The original verification path is retained above; the former prototype archive moved to legacy/ when the active product was named DwellProof.",
+  "checks": [
+    {"city": "北京", "official": {"mom_index": 100.4, "yoy_index": 92.6}, "local": {"mom_index": 100.4, "yoy_index": 92.6}, "matches": true},
+    {"city": "上海", "official": {"mom_index": 100.7, "yoy_index": 94.4}, "local": {"mom_index": 100.7, "yoy_index": 94.4}, "matches": true},
+    {"city": "广州", "official": {"mom_index": 100.2, "yoy_index": 92.1}, "local": {"mom_index": 100.2, "yoy_index": 92.1}, "matches": true},
+    {"city": "深圳", "official": {"mom_index": 100.3, "yoy_index": 93.5}, "local": {"mom_index": 100.3, "yoy_index": 93.5}, "matches": true},
+    {"city": "武汉", "official": {"mom_index": 100.1, "yoy_index": 90.6}, "local": {"mom_index": 100.1, "yoy_index": 90.6}, "matches": true}
+  ],
+  "all_match": true
+}

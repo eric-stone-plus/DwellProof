@@ -1,0 +1,14 @@
+{
+  "schema_version": "official-source-snapshot.v1",
+  "source_url": "https://guangdong.chinatax.gov.cn/gdsw/zjfg/2024-11/14/content_0289c52475614b0c9d89145c43310721.shtml",
+  "source_authority": "Ministry of Finance / State Taxation Administration / Ministry of Housing and Urban-Rural Development",
+  "source_sha256": "33c8ebe85c7bac9b88a3de253b60cdd93956042e285884cd5dc36e88962b15e1",
+  "effective_from": "2024-12-01",
+  "retrieved_at": "2026-07-12T18:22:21+08:00",
+  "deed_tax": {
+    "family_only_home": {"area_lte_140_rate": 0.01, "area_gt_140_rate": 0.015},
+    "family_second_home": {"area_lte_140_rate": 0.01, "area_gt_140_rate": 0.02}
+  },
+  "product_constraint": "local_implementation_and_other_taxes_require_separate_verification"
+}
+

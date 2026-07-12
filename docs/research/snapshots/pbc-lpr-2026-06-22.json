@@ -1,0 +1,15 @@
+{
+  "schema_version": "official-source-snapshot.v1",
+  "source_url": "https://www.pbc.gov.cn/zhengcehuobisi/125207/125213/125440/3876551/2026062208495122562/index.html",
+  "source_authority": "People's Bank of China",
+  "source_sha256": "e7d55c20b77a779d72c0ff6cbbdf46d2930ccc961138f24ea54a6f8d0295816e",
+  "published_at": "2026-06-22T09:00:26+08:00",
+  "retrieved_at": "2026-07-12T18:29:02+08:00",
+  "validity": "valid_until_the_next_LPR_publication",
+  "values": {
+    "lpr_1y_percent": 3.0,
+    "lpr_5y_plus_percent": 3.5
+  },
+  "product_constraint": "benchmark_only_not_the_user_mortgage_execution_rate"
+}
+

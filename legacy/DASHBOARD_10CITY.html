@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>10城城市指数历史归档 — MAGI v1.0</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--border:#30363d;--text:#c9d1d9;--dim:#8b949e;--gold:#f0c040;--green:#3fb950;--red:#f85149;--yellow:#d29922;--blue:#58a6ff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'SF Mono',monospace;padding:12px;font-size:12px}
+.archive-warning{position:sticky;top:0;z-index:9999;background:#7f1d1d;color:#fff;border:2px solid #fca5a5;padding:10px 14px;margin:-12px -12px 12px;text-align:center;font-family:-apple-system,system-ui,sans-serif;font-size:13px;font-weight:700;line-height:1.6;box-shadow:0 4px 14px #0008}
+.archive-warning a{color:#fef3c7;text-decoration:underline}.archive-warning code{background:#450a0a;padding:2px 6px;border-radius:4px}
+.hdr{text-align:center;padding:16px 0;border-bottom:1px solid var(--border);margin-bottom:16px}
+.hdr h1{color:var(--gold);font-size:20px}.hdr .sub{color:var(--dim);font-size:11px}
+.c{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:12px;margin-bottom:12px}
+.c h3{color:var(--gold);margin-bottom:8px;font-size:13px}
+.sr{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid var(--border)}
+.sl{color:var(--dim)}.sv{font-weight:bold}
+.p{color:var(--green)}.n{color:var(--red)}.w{color:var(--yellow)}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th{color:var(--gold);text-align:left;padding:5px;border-bottom:2px solid var(--border)}
+td{padding:4px 5px;border-bottom:1px solid var(--border)}
+.badge{display:inline-block;padding:1px 5px;border-radius:3px;font-size:10px}
+.bg{background:#3fb95022;color:var(--green)}.br{background:#f8514922;color:var(--red)}.by{background:#d2992222;color:var(--yellow)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.alert{padding:6px 10px;margin:3px 0;border-radius:4px;font-size:11px}
+.ac{background:#3fb95015;border-left:3px solid var(--green)}
+.aw{background:#d2992215;border-left:3px solid var(--yellow)}
+.ft{text-align:center;padding:12px;color:var(--dim);font-size:10px;margin-top:20px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="archive-warning" role="alert">
+LEGACY_ARCHIVE_UNVERIFIED · INSUFFICIENT_EVIDENCE · actionable: false<br>
+原 HouseAlice 原型已退役；本页仅作历史留档，不属于 DwellProof。<br>
+历史归档 · 非投资建议 · 不得用于交易决策。此页仅保留旧版城市指数样本，所有买卖、择时及跨城预测均已停用。新版入口：<a href="../web/">../web/</a>；在项目根目录运行 <code>cd web &amp;&amp; npm run dev</code>。
+</div>
+<div class="hdr">
+<h1>10城城市指数历史归档</h1>
+<div class="sub">MAGI v1.0 | 2026-06-14 | hm+cc+mc (mimo-v2.5-pro)</div>
+</div>
+
+<div class="c">
+<h3>城市指数背景（旧择时功能已停用）</h3>
+<table>
+<tr><th>城市</th><th>梯队</th><th>当前环比</th><th>当前同比</th><th>旧状态</th><th>用途</th><th>旧季节性样本</th></tr>
+<tr><td>上海</td><td>T1</td><td class="p">100.7</td><td class="n">94.4</td><td><span class="badge by">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+<tr><td>北京</td><td>T1</td><td class="p">100.4</td><td class="n">92.6</td><td><span class="badge by">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+<tr><td>西安</td><td>T2</td><td class="p">100.4</td><td class="n">91.9</td><td><span class="badge by">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+<tr><td>广州</td><td>T1</td><td class="p">100.2</td><td class="n">92.1</td><td><span class="badge by">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+<tr><td>武汉</td><td>T2</td><td class="p">100.1</td><td class="n">90.6</td><td><span class="badge by">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+<tr><td>杭州</td><td>T2</td><td>99.9</td><td>95.0</td><td><span class="badge by">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+<tr><td>成都</td><td>T2</td><td>99.9</td><td class="n">93.9</td><td><span class="badge by">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+<tr><td>郑州</td><td>T2</td><td>99.9</td><td class="n">92.2</td><td><span class="badge by">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+<tr><td>长春</td><td>T3</td><td>99.8</td><td>95.9</td><td><span class="badge by">旧估算已停用</span></td><td>城市指数背景</td><td>4月（不可操作）</td></tr>
+<tr><td>珠海</td><td>—</td><td>—</td><td>—</td><td><span class="badge br">❌无数据</span></td><td>—</td><td>—</td></tr>
+</table>
+</div>
+
+<div class="c">
+<h3>上海指数旧关联假设（探索性关联，不可操作）</h3>
+<table>
+<tr><th>月份</th><th>上海环比</th><th>历史标签</th><th>验证状态</th></tr>
+<tr><td>2025-08</td><td class="n">99.0</td><td>旧标签已停用</td><td>探索性关联，不可操作</td></tr>
+<tr><td>2025-11</td><td class="n">98.9</td><td>旧标签已停用</td><td>探索性关联，不可操作</td></tr>
+<tr><td>2026-01</td><td>99.5</td><td>旧标签已停用</td><td>探索性关联，不可操作</td></tr>
+<tr><td>2026-03</td><td class="p">100.4</td><td>指数高于100</td><td>探索性关联，不可操作</td></tr>
+<tr><td>2026-04</td><td class="p">100.7</td><td>指数高于100</td><td>探索性关联，不可操作</td></tr>
+</table>
+</div>
+
+<div class="c">
+<h3>区域指数背景（旧热度分类已停用）</h3>
+<table>
+<tr><th>区域</th><th>二手环比</th><th>旧分类</th><th>用途</th></tr>
+<tr><td>长三角</td><td class="p">100.01</td><td><span class="badge by">已停用</span></td><td>城市指数背景</td></tr>
+<tr><td>福建</td><td class="p">100.00</td><td><span class="badge by">已停用</span></td><td>城市指数背景</td></tr>
+<tr><td>山东</td><td>99.87</td><td><span class="badge by">已停用</span></td><td>城市指数背景</td></tr>
+<tr><td>东北</td><td>99.84</td><td><span class="badge by">已停用</span></td><td>城市指数背景</td></tr>
+<tr><td>西北</td><td>99.86</td><td><span class="badge by">已停用</span></td><td>城市指数背景</td></tr>
+<tr><td>京津冀</td><td>99.80</td><td><span class="badge by">已停用</span></td><td>城市指数背景</td></tr>
+<tr><td>珠三角</td><td>99.78</td><td><span class="badge by">已停用</span></td><td>城市指数背景</td></tr>
+<tr><td>西南</td><td>99.61</td><td><span class="badge by">已停用</span></td><td>城市指数背景</td></tr>
+<tr><td>华中</td><td>99.63</td><td><span class="badge by">已停用</span></td><td>城市指数背景</td></tr>
+<tr><td>广西</td><td>99.45</td><td><span class="badge by">已停用</span></td><td>城市指数背景</td></tr>
+</table>
+</div>
+
+<div class="c">
+<h3>各城市历史指数样本（旧卖房决策已停用）</h3>
+<div class="g">
+<div class="c"><h3>上海</h3>
+<div class="sr"><span class="sl">环比</span><span class="sv p">100.7</span></div>
+<div class="sr"><span class="sl">同比</span><span class="sv n">94.4</span></div>
+<div class="sr"><span class="sl">旧状态</span><span class="sv">旧估算已停用</span></div>
+<div class="sr"><span class="sl">旧季节性样本</span><span class="sv">3月(100.27)，不可操作</span></div>
+<div class="sr"><span class="sl">旧样本低点</span><span class="sv">2024-05</span></div>
+</div>
+<div class="c"><h3>北京</h3>
+<div class="sr"><span class="sl">环比</span><span class="sv p">100.4</span></div>
+<div class="sr"><span class="sl">同比</span><span class="sv n">92.6</span></div>
+<div class="sr"><span class="sl">旧状态</span><span class="sv">旧估算已停用</span></div>
+<div class="sr"><span class="sl">旧季节性样本</span><span class="sv">3月(100.29)，不可操作</span></div>
+<div class="sr"><span class="sl">旧样本低点</span><span class="sv">2024-09</span></div>
+</div>
+<div class="c"><h3>广州</h3>
+<div class="sr"><span class="sl">环比</span><span class="sv p">100.2</span></div>
+<div class="sr"><span class="sl">同比</span><span class="sv n">92.1</span></div>
+<div class="sr"><span class="sl">旧状态</span><span class="sv">旧估算已停用</span></div>
+<div class="sr"><span class="sl">旧季节性样本</span><span class="sv">3月(100.60)，不可操作</span></div>
+<div class="sr"><span class="sl">旧样本低点</span><span class="sv">2024-09</span></div>
+</div>
+<div class="c"><h3>武汉</h3>
+<div class="sr"><span class="sl">环比</span><span class="sv p">100.1</span></div>
+<div class="sr"><span class="sl">同比</span><span class="sv n">90.6</span></div>
+<div class="sr"><span class="sl">旧状态</span><span class="sv">旧估算已停用</span></div>
+<div class="sr"><span class="sl">旧季节性样本</span><span class="sv">3月(100.23)，不可操作</span></div>
+<div class="sr"><span class="sl">旧样本低点</span><span class="sv">2024-07</span></div>
+</div>
+<div class="c"><h3>杭州</h3>
+<div class="sr"><span class="sl">环比</span><span class="sv w">99.9</span></div>
+<div class="sr"><span class="sl">同比</span><span class="sv">95.0</span></div>
+<div class="sr"><span class="sl">旧状态</span><span class="sv">旧估算已停用</span></div>
+<div class="sr"><span class="sl">旧季节性样本</span><span class="sv">3月(100.36)，不可操作</span></div>
+<div class="sr"><span class="sl">旧样本低点</span><span class="sv">2012-04</span></div>
+</div>
+<div class="c"><h3>成都</h3>
+<div class="sr"><span class="sl">环比</span><span class="sv w">99.9</span></div>
+<div class="sr"><span class="sl">同比</span><span class="sv n">93.9</span></div>
+<div class="sr"><span class="sl">旧状态</span><span class="sv">旧估算已停用</span></div>
+<div class="sr"><span class="sl">旧季节性样本</span><span class="sv">3月(100.20)，不可操作</span></div>
+<div class="sr"><span class="sl">旧样本低点</span><span class="sv">2024-09</span></div>
+</div>
+<div class="c"><h3>郑州</h3>
+<div class="sr"><span class="sl">环比</span><span class="sv w">99.9</span></div>
+<div class="sr"><span class="sl">同比</span><span class="sv n">92.2</span></div>
+<div class="sr"><span class="sl">旧状态</span><span class="sv">旧估算已停用</span></div>
+<div class="sr"><span class="sl">旧季节性样本</span><span class="sv">3月(100.26)，不可操作</span></div>
+<div class="sr"><span class="sl">旧样本低点</span><span class="sv">2024-05</span></div>
+</div>
+<div class="c"><h3>西安</h3>
+<div class="sr"><span class="sl">环比</span><span class="sv p">100.4</span></div>
+<div class="sr"><span class="sl">同比</span><span class="sv n">91.9</span></div>
+<div class="sr"><span class="sl">旧状态</span><span class="sv">旧估算已停用</span></div>
+<div class="sr"><span class="sl">旧季节性样本</span><span class="sv">3月(100.33)，不可操作</span></div>
+<div class="sr"><span class="sl">旧样本低点</span><span class="sv">2026-01</span></div>
+</div>
+<div class="c"><h3>长春</h3>
+<div class="sr"><span class="sl">环比</span><span class="sv w">99.8</span></div>
+<div class="sr"><span class="sl">同比</span><span class="sv">95.9</span></div>
+<div class="sr"><span class="sl">旧状态</span><span class="sv">旧估算已停用</span></div>
+<div class="sr"><span class="sl">旧季节性样本</span><span class="sv">4月(100.19)，不可操作</span></div>
+<div class="sr"><span class="sl">旧样本低点</span><span class="sv">2023-04</span></div>
+</div>
+</div>
+</div>
+
+<div class="c">
+<h3>旧实操规则记录（全部停用，不得执行）</h3>
+<table>
+<tr><th>旧步骤</th><th>历史规则说明</th><th>状态</th></tr>
+<tr><td>1</td><td>旧版使用同小区近期成交作参考</td><td>已停用，不可操作</td></tr>
+<tr><td>2</td><td>旧版使用固定折价公式</td><td>已停用，不可操作</td></tr>
+<tr><td>3</td><td>旧版使用固定议价空间</td><td>已停用，不可操作</td></tr>
+<tr><td>4</td><td>旧版观察带看量变化</td><td>已停用，不可操作</td></tr>
+<tr><td>5</td><td>旧版按固定时点调整价格</td><td>已停用，不可操作</td></tr>
+<tr><td>6</td><td>旧版按固定时点进一步调整价格</td><td>已停用，不可操作</td></tr>
+</table>
+</div>
+
+<div class="c">
+<h3>📡 监控指标</h3>
+<table>
+<tr><th>指标</th><th>来源</th><th>看什么</th></tr>
+<tr><td>上海二手环比</td><td>统计局月度</td><td>仅作城市指数背景；跨城关联不可操作</td></tr>
+<tr><td>同小区成交量</td><td>待核验房源级来源</td><td>须核验口径、地址、日期和原始凭证</td></tr>
+<tr><td>挂牌量变化</td><td>待核验房源级来源</td><td>不得单独构成交易触发</td></tr>
+<tr><td>带看量</td><td>待核验房源级来源</td><td>不得单独构成交易触发</td></tr>
+<tr><td>LPR 5Y</td><td>央行月度</td><td>仅为基准，不等于银行实际执行利率</td></tr>
+</table>
+</div>
+
+<div class="ft">
+<p>MAGI v1.0 | 10城城市指数历史归档 | 旧分析逻辑已停用</p>
+<p>历史归档 · 非投资建议 · 不得用于交易决策；请使用 ../web/ 新版证据工作台</p>
+</div>
+</body>
+</html>

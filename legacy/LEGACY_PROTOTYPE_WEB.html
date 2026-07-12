@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>HouseAlice 历史归档 — 城市指数研究快照</title>
+<style>
+:root{--bg:#0a0e17;--card:#111827;--border:#1f2937;--text:#e5e7eb;--dim:#9ca3af;--gold:#f59e0b;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--blue:#3b82f6;--purple:#8b5cf6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,system-ui,sans-serif;font-size:14px}
+.archive-warning{position:sticky;top:0;z-index:9999;background:#7f1d1d;color:#fff;border:2px solid #fca5a5;padding:12px 18px;text-align:center;font-weight:700;line-height:1.6;box-shadow:0 4px 14px rgba(0,0,0,.45)}
+.archive-warning a{color:#fef3c7;text-decoration:underline}.archive-warning code{background:#450a0a;padding:2px 6px;border-radius:4px}
+.nav{background:var(--card);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;gap:12px}
+.nav .logo{color:var(--gold);font-size:18px;font-weight:700}
+.nav .tag{background:var(--gold);color:#000;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+.main{max-width:1400px;margin:0 auto;padding:20px}
+.grid{display:grid;gap:16px}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px}
+.card h3{color:var(--gold);font-size:14px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card h3 .icon{font-size:18px}
+.stat{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)}
+.stat:last-child{border:none}
+.stat .label{color:var(--dim);font-size:13px}
+.stat .value{font-weight:600;font-size:15px}
+.stat .value.green{color:var(--green)}
+.stat .value.red{color:var(--red)}
+.stat .value.yellow{color:var(--yellow)}
+.stat .value.blue{color:var(--blue)}
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:500}
+.badge-green{background:rgba(16,185,129,0.15);color:var(--green)}
+.badge-red{background:rgba(239,68,68,0.15);color:var(--red)}
+.badge-yellow{background:rgba(245,158,11,0.15);color:var(--yellow)}
+.badge-blue{background:rgba(59,130,246,0.15);color:var(--blue)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;padding:8px 10px;color:var(--gold);border-bottom:2px solid var(--border);font-weight:600}
+td{padding:7px 10px;border-bottom:1px solid var(--border)}
+tr:hover{background:rgba(255,255,255,0.03)}
+.section{margin:24px 0 16px}
+.section h2{color:var(--gold);font-size:16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.footer{text-align:center;padding:20px;color:var(--dim);font-size:12px;margin-top:30px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="archive-warning" role="alert">
+  LEGACY_ARCHIVE_UNVERIFIED · INSUFFICIENT_EVIDENCE · actionable: false<br>
+原 HouseAlice 原型已退役；本页仅作历史留档，不属于 DwellProof。<br>
+历史归档 · 非投资建议 · 不得用于交易决策。此页仅保留旧版城市指数研究快照，所有买卖、择时、排名与预测功能均已停用。新版入口：<a href="../web/">../web/</a>；在项目根目录运行 <code>cd web &amp;&amp; npm run dev</code>。
+</div>
+<div class="nav">
+  <span class="logo">🏠 HouseAlice</span>
+  <span class="tag">MAGI v1.0</span>
+  <span style="color:var(--dim);font-size:12px">历史城市指数研究快照（非房源估值）</span>
+  <span style="flex:1"></span>
+  <span style="color:var(--dim);font-size:12px">数据: 63城 × 184月 | 更新: 2026-06-14</span>
+</div>
+
+<div class="main">
+
+<!-- 上海指数历史样本 -->
+<div class="section"><h2>上海二手房指数样本（旧领先关系已停用）</h2></div>
+<div class="grid grid-4">
+  <div class="card">
+    <h3><span class="icon">📊</span>当前值</h3>
+    <div class="stat"><span class="label">上海二手环比</span><span class="value green">100.7</span></div>
+    <div class="stat"><span class="label">上海二手同比</span><span class="value red">94.4</span></div>
+    <div class="stat"><span class="label">用途</span><span class="badge badge-blue">城市指数背景</span></div>
+  </div>
+  <div class="card">
+    <h3><span class="icon">⏰</span>旧关联假设</h3>
+    <div class="stat"><span class="label">历史窗口</span><span class="value">2-5个月</span></div>
+    <div class="stat"><span class="label">结论</span><span class="value">探索性关联，不可操作</span></div>
+    <div class="stat"><span class="label">验证状态</span><span class="value">未通过交易级验证</span></div>
+  </div>
+  <div class="card">
+    <h3><span class="icon">📅</span>上海近6月</h3>
+    <div class="stat"><span class="label">2025-11</span><span class="value red">98.9</span></div>
+    <div class="stat"><span class="label">2026-01</span><span class="value">99.5</span></div>
+    <div class="stat"><span class="label">2026-04</span><span class="value green">100.7</span></div>
+  </div>
+  <div class="card">
+    <h3><span class="icon">🎯</span>旧预测（已停用）</h3>
+    <div class="stat"><span class="label">北京旧估算</span><span class="value">2026.06-07（不可操作）</span></div>
+    <div class="stat"><span class="label">广州旧估算</span><span class="value">2026.06-07（不可操作）</span></div>
+    <div class="stat"><span class="label">杭州旧估算</span><span class="value">2026.07-08（不可操作）</span></div>
+  </div>
+</div>
+
+<!-- 梯队总览 -->
+<div class="section"><h2>📊 梯队总览</h2></div>
+<div class="grid grid-3">
+  <div class="card">
+    <h3><span class="icon">🏙️</span>一线 (4城)</h3>
+    <div class="stat"><span class="label">旧分类</span><span class="badge badge-blue">旧估算已停用</span></div>
+    <div class="stat"><span class="label">新房环比</span><span class="value green">100.10</span></div>
+    <div class="stat"><span class="label">二手环比</span><span class="value green">100.40</span></div>
+    <div class="stat"><span class="label">新房同比</span><span class="value red">97.9</span></div>
+    <div class="stat"><span class="label">二手同比</span><span class="value red">93.2</span></div>
+  </div>
+  <div class="card">
+    <h3><span class="icon">🌆</span>强二线 (9城)</h3>
+    <div class="stat"><span class="label">旧分类</span><span class="badge badge-blue">旧估算已停用</span></div>
+    <div class="stat"><span class="label">新房环比</span><span class="value">99.98</span></div>
+    <div class="stat"><span class="label">二手环比</span><span class="value">99.96</span></div>
+    <div class="stat"><span class="label">新房同比</span><span class="value red">96.1</span></div>
+    <div class="stat"><span class="label">二手同比</span><span class="value red">92.9</span></div>
+  </div>
+  <div class="card">
+    <h3><span class="icon">🏘️</span>二三线 (50城)</h3>
+    <div class="stat"><span class="label">旧分类</span><span class="badge badge-blue">旧估算已停用</span></div>
+    <div class="stat"><span class="label">新房环比</span><span class="value red">99.75</span></div>
+    <div class="stat"><span class="label">二手环比</span><span class="value red">99.70</span></div>
+    <div class="stat"><span class="label">新房同比</span><span class="value red">96.3</span></div>
+    <div class="stat"><span class="label">二手同比</span><span class="value red">94.0</span></div>
+  </div>
+</div>
+
+<!-- 历史城市指数背景 -->
+<div class="section"><h2>城市指数背景（旧买房信号已停用）</h2></div>
+<div class="card">
+  <table>
+    <tr><th>城市</th><th>梯队</th><th>环比</th><th>同比</th><th>用途</th><th>说明</th></tr>
+    <tr><td>上海</td><td>T1</td><td class="green">100.7</td><td class="red">94.4</td><td><span class="badge badge-blue">城市指数背景</span></td><td>不能替代房源级估值</td></tr>
+    <tr><td>北京</td><td>T1</td><td class="green">100.4</td><td class="red">92.6</td><td><span class="badge badge-blue">城市指数背景</span></td><td>不能替代房源级估值</td></tr>
+    <tr><td>西安</td><td>T2</td><td class="green">100.4</td><td class="red">91.9</td><td><span class="badge badge-blue">城市指数背景</span></td><td>不能替代房源级估值</td></tr>
+    <tr><td>深圳</td><td>T1</td><td class="green">100.3</td><td class="red">93.5</td><td><span class="badge badge-blue">城市指数背景</span></td><td>不能替代房源级估值</td></tr>
+    <tr><td>广州</td><td>T1</td><td class="green">100.2</td><td class="red">92.1</td><td><span class="badge badge-blue">城市指数背景</span></td><td>不能替代房源级估值</td></tr>
+    <tr><td>武汉</td><td>T2</td><td class="green">100.1</td><td class="red">90.6</td><td><span class="badge badge-blue">城市指数背景</span></td><td>不能替代房源级估值</td></tr>
+    <tr><td>杭州</td><td>T2</td><td>99.9</td><td>95.0</td><td><span class="badge badge-blue">城市指数背景</span></td><td>不能替代房源级估值</td></tr>
+    <tr><td>成都</td><td>T2</td><td>99.9</td><td class="red">93.9</td><td><span class="badge badge-blue">城市指数背景</span></td><td>不能替代房源级估值</td></tr>
+    <tr><td>郑州</td><td>T2</td><td>99.9</td><td class="red">92.2</td><td><span class="badge badge-blue">城市指数背景</span></td><td>不能替代房源级估值</td></tr>
+    <tr><td>长春</td><td>T3</td><td>99.8</td><td>95.9</td><td><span class="badge badge-blue">城市指数背景</span></td><td>不能替代房源级估值</td></tr>
+  </table>
+</div>
+
+<!-- 历史季节性样本 -->
+<div class="section"><h2>城市指数背景（旧卖房信号已停用）</h2></div>
+<div class="card">
+  <table>
+    <tr><th>城市</th><th>环比</th><th>旧状态</th><th>说明</th><th>旧季节性样本</th></tr>
+    <tr><td>上海</td><td class="green">100.7</td><td><span class="badge badge-blue">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+    <tr><td>北京</td><td class="green">100.4</td><td><span class="badge badge-blue">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+    <tr><td>西安</td><td class="green">100.4</td><td><span class="badge badge-blue">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+    <tr><td>深圳</td><td class="green">100.3</td><td><span class="badge badge-blue">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+    <tr><td>广州</td><td class="green">100.2</td><td><span class="badge badge-blue">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+    <tr><td>武汉</td><td class="green">100.1</td><td><span class="badge badge-blue">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+    <tr><td>杭州</td><td>99.9</td><td><span class="badge badge-blue">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+    <tr><td>成都</td><td>99.9</td><td><span class="badge badge-blue">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+    <tr><td>郑州</td><td>99.9</td><td><span class="badge badge-blue">旧估算已停用</span></td><td>城市指数背景</td><td>3月（不可操作）</td></tr>
+    <tr><td>长春</td><td>99.8</td><td><span class="badge badge-blue">旧估算已停用</span></td><td>城市指数背景</td><td>4月（不可操作）</td></tr>
+  </table>
+</div>
+
+<!-- 历史租售比样本 -->
+<div class="section"><h2>城市租售比历史样本（旧排名已停用）</h2></div>
+<div class="card">
+  <table>
+    <tr><th>旧序号</th><th>城市</th><th>租售比</th><th>环比</th><th>同比</th><th>旧状态</th></tr>
+    <tr><td>1</td><td>长春</td><td class="green">3.3%</td><td>99.8</td><td>95.9</td><td><span class="badge badge-blue">旧估算已停用</span></td></tr>
+    <tr><td>2</td><td>郑州</td><td class="green">2.9%</td><td>99.9</td><td class="red">92.2</td><td><span class="badge badge-blue">旧估算已停用</span></td></tr>
+    <tr><td>3</td><td>成都</td><td class="green">2.8%</td><td>99.9</td><td class="red">93.9</td><td><span class="badge badge-blue">旧估算已停用</span></td></tr>
+    <tr><td>4</td><td>武汉</td><td class="green">2.7%</td><td class="green">100.1</td><td class="red">90.6</td><td><span class="badge badge-blue">旧估算已停用</span></td></tr>
+    <tr><td>5</td><td>西安</td><td>2.3%</td><td class="green">100.4</td><td class="red">91.9</td><td><span class="badge badge-blue">旧估算已停用</span></td></tr>
+    <tr><td>6</td><td>广州</td><td>2.2%</td><td class="green">100.2</td><td class="red">92.1</td><td><span class="badge badge-blue">旧估算已停用</span></td></tr>
+    <tr><td>7</td><td>杭州</td><td>2.0%</td><td>99.9</td><td>95.0</td><td><span class="badge badge-blue">旧估算已停用</span></td></tr>
+    <tr><td>8</td><td>上海</td><td class="red">1.8%</td><td class="green">100.7</td><td class="red">94.4</td><td><span class="badge badge-blue">旧估算已停用</span></td></tr>
+    <tr><td>9</td><td>北京</td><td class="red">1.7%</td><td class="green">100.4</td><td class="red">92.6</td><td><span class="badge badge-blue">旧估算已停用</span></td></tr>
+    <tr><td>10</td><td>深圳</td><td class="red">1.5%</td><td class="green">100.3</td><td class="red">93.5</td><td><span class="badge badge-blue">旧估算已停用</span></td></tr>
+  </table>
+</div>
+
+<!-- 宏观环境 -->
+<div class="section"><h2>🏦 宏观环境</h2></div>
+<div class="grid grid-2">
+  <div class="card">
+    <h3><span class="icon">💰</span>货币政策</h3>
+    <div class="stat"><span class="label">LPR 1Y 基准</span><span class="value">3.0%</span></div>
+    <div class="stat"><span class="label">LPR 5Y+ 基准</span><span class="value">3.5%</span></div>
+    <div class="stat"><span class="label">旧房贷估算</span><span class="value">~3.2%（未核验，已停用）</span></div>
+    <div class="stat"><span class="label">vs 2021高点</span><span class="value green">-115bp</span></div>
+  </div>
+  <div class="card">
+    <h3><span class="icon">📈</span>经济指标</h3>
+    <div class="stat"><span class="label">制造业PMI (2026-05)</span><span class="value">50.0</span></div>
+    <div class="stat"><span class="label">非制造业PMI (2026-05)</span><span class="value green">50.1</span></div>
+    <div class="stat"><span class="label">国房景气指数</span><span class="value red">91.45</span></div>
+    <div class="stat"><span class="label">建材指数</span><span class="value">919 (-8.3%YoY)</span></div>
+  </div>
+</div>
+
+<!-- 系统信息 -->
+<div class="section"><h2>ℹ️ 系统信息</h2></div>
+<div class="grid grid-4">
+  <div class="card">
+    <h3><span class="icon">📊</span>数据</h3>
+    <div class="stat"><span class="label">城市数</span><span class="value">63</span></div>
+    <div class="stat"><span class="label">记录数</span><span class="value">12,536</span></div>
+    <div class="stat"><span class="label">数据期</span><span class="value">2011-2026</span></div>
+  </div>
+  <div class="card">
+    <h3><span class="icon">🤖</span>AI引擎</h3>
+    <div class="stat"><span class="label">协议</span><span class="value">MAGI v1.0</span></div>
+    <div class="stat"><span class="label">角色</span><span class="value">hm+cc+mc</span></div>
+    <div class="stat"><span class="label">轮次</span><span class="value">R1→R2→R3</span></div>
+  </div>
+  <div class="card">
+    <h3><span class="icon">🔧</span>工具</h3>
+    <div class="stat"><span class="label">MCP工具</span><span class="value">8个</span></div>
+    <div class="stat"><span class="label">Python脚本</span><span class="value">22个</span></div>
+    <div class="stat"><span class="label">MD报告</span><span class="value">85个</span></div>
+  </div>
+  <div class="card">
+    <h3><span class="icon">🏠</span>HouseAlice</h3>
+    <div class="stat"><span class="label">UHA</span><span class="value">历史组件</span></div>
+    <div class="stat"><span class="label">Alert</span><span class="value">旧规则已停用</span></div>
+    <div class="stat"><span class="label">Decision</span><span class="value">旧规则已停用</span></div>
+    <div class="stat"><span class="label">MCP</span><span class="value">旧方向输出已停用</span></div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>HouseAlice 历史城市指数研究快照 | MAGI v1.0 | 旧分析逻辑已停用</p>
+  <p>数据源: 国家统计局70城房价指数 via akshare | 宏观: GDP/CPI/PMI/LPR/M2</p>
+  <p>历史归档 · 非投资建议 · 不得用于交易决策；请使用 ../web/ 新版证据工作台</p>
+</div>
+
+</div>
+</body>
+</html>

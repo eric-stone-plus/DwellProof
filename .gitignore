@@ -1,0 +1,36 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environments and secrets
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Frontend build output
+node_modules/
+.next/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Local research/browser caches. Curated findings live under docs/.
+.firecrawl/
+.playwright-cli/
+output/
+
+# Personal housing data and generated account state must never enter Git.
+legacy/uha_data.json
+legacy/UHA_REPORT.md
+legacy/alert_history.json
+legacy/backup/
+data/private/
+*.local.json

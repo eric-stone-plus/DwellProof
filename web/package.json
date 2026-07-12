@@ -1,0 +1,42 @@
+{
+  "name": "dwellproof-evidence-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Fail-closed evidence workbench for a specific second-hand home transaction.",
+  "author": "eric-stone-plus",
+  "contributors": [
+    "Codex (OpenAI)"
+  ],
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eric-stone-plus/DwellProof.git",
+    "directory": "web"
+  },
+  "homepage": "https://github.com/eric-stone-plus/DwellProof#readme",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^15.5.20",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.0"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "8.5.10"
+    }
+  }
+}
