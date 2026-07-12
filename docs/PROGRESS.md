@@ -24,6 +24,14 @@ record outcomes and verification, not just intended tasks.
   both official-source checks, `npm audit`, TypeScript checking, and the
   production build. All passed; the milestone manifest also verified before
   publication metadata was added and was then regenerated.
+- Created the public repository at
+  `https://github.com/eric-stone-plus/DwellProof` and pushed `main`. The initial
+  controlled-prototype baseline is commit
+  `86fbd93ef059890cb3a8ff9130296922763e873f`; the local branch, remote-tracking
+  branch, and GitHub `main` reference all resolved to that object after push.
+- Verified through GitHub's commit-author graph that the initial commit records
+  both `eric-stone-plus` and `Codex` (`@codex`) as authors. The repository also
+  retains the human-readable contribution record in `CONTRIBUTORS.md`.
 
 ## 2026-07-12 - DwellProof milestone freeze
 
