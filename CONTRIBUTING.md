@@ -33,8 +33,9 @@ Explain any changed formula or policy rule and add regression coverage for its
 boundaries. Do not refresh an official snapshot without retaining its source
 URL, timestamps, response hash, and review notes.
 
-## Rights
+## License
 
-No open-source license is currently granted. Only submit material you authored
-or have the right to submit. Acceptance of a contribution does not broaden the
-rights described in `RIGHTS.md` unless the maintainer explicitly changes them.
+Only submit material you authored or have the right to submit. By contributing,
+you agree that your contribution is licensed under the repository's MIT
+License. Third-party data, quotations, and archival material remain subject to
+the boundaries in `RIGHTS.md`.

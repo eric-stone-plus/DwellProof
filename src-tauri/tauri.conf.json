@@ -32,6 +32,13 @@
     "active": true,
     "category": "Business",
     "copyright": "Copyright 2026 eric-stone-plus",
+    "license": "MIT",
+    "licenseFile": "../LICENSE",
+    "resources": {
+      "../LICENSE": "licenses/DwellProof-LICENSE",
+      "../THIRD_PARTY_NOTICES.md": "licenses/THIRD_PARTY_NOTICES.md",
+      "../licenses/QueryForge-APACHE-2.0.txt": "licenses/QueryForge-APACHE-2.0.txt"
+    },
     "shortDescription": "Evidence workbench for a specific second-hand home transaction.",
     "longDescription": "A local-first, fail-closed evidence workbench for evaluating a specific second-hand home transaction in China.",
     "targets": ["app"],

@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme tokens derived from QueryForge/COFORGE and modified for DwellProof.
+   See THIRD_PARTY_NOTICES.md for the Apache-2.0 and MIT notices. */
 :root {
   --bg: #0d1117;
   --surface: #161b22;

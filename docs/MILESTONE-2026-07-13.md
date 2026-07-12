@@ -19,6 +19,9 @@ not weaken, the fail-closed controlled-prototype baseline from 2026-07-12.
 - The current WebView has no Tauri IPC permissions.
 - Reasonix is deferred to a future read-only, cited explanation layer and cannot
   own facts, calculations, readiness, or advice.
+- DwellProof-authored software and associated documentation use the MIT License.
+  QueryForge/COFORGE-derived design material retains its original Apache-2.0
+  and MIT copyright and permission notices in `THIRD_PARTY_NOTICES.md`.
 
 ## Verification matrix
 

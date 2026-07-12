@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "DwellProof local evidence workbench desktop shell"
 authors = ["eric-stone-plus", "Codex (OpenAI)"]
 edition = "2021"
-license = "UNLICENSED"
+license = "MIT"
 
 [lib]
 name = "dwellproof_desktop_lib"

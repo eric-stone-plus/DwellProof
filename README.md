@@ -4,7 +4,7 @@ DwellProof is a local-first evidence workbench for evaluating a specific second-
 home transaction in China. Its intended output is an auditable investment memo,
 not a black-box buy/sell signal.
 
-## Status on 2026-07-12
+## Status on 2026-07-13
 
 The repository has been reorganized around a fail-closed accuracy core and a new
 QueryForge-inspired workbench. It is a controlled prototype, not yet an
@@ -137,12 +137,12 @@ distribution packages.
 See `CONTRIBUTORS.md` for the contribution record and `CONTRIBUTING.md` for
 the evidence, privacy, and verification requirements applied to changes.
 
-## Rights and public-use boundary
+## License and third-party rights
 
-This repository is public for inspection and reproducibility, but it does not
-currently grant an open-source license. Public visibility is not permission to
-copy, redistribute, or reuse its contents. The retired `legacy/` tree and
-research material may also contain third-party data or quotations whose rights
-remain with their respective owners. See `RIGHTS.md` for the repository-wide
-boundary and `SECURITY.md` before reporting a problem involving real property
-or personal financial data.
+DwellProof-authored software and associated documentation are licensed under
+the MIT License; see `LICENSE`. QueryForge/COFORGE-derived design material
+retains its upstream Apache-2.0 and MIT notices in
+`THIRD_PARTY_NOTICES.md`. The retired `legacy/` tree and research areas may
+contain third-party data, quotations, or archival material that the MIT License
+does not relicense. See `RIGHTS.md` for that boundary and `SECURITY.md` before
+reporting a problem involving real property or personal financial data.

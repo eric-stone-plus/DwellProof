@@ -3,6 +3,37 @@
 This file is the durable hand-off for work completed in the repository. Entries
 record outcomes and verification, not just intended tasks.
 
+## 2026-07-13 - MIT license adoption and continuation hand-off
+
+- Adopted the standard MIT License for DwellProof-authored software and
+  associated documentation, with `eric-stone-plus` as the copyright holder.
+- Preserved the original QueryForge Apache-2.0 and COFORGE MIT notices for the
+  copied design tokens and gradient in `THIRD_PARTY_NOTICES.md`; DwellProof's
+  own application icons use that upstream gradient with a product-specific
+  glyph.
+- Updated the npm and Cargo package metadata and replaced the initial
+  inspection-only publication language throughout the repository.
+- Preserved an explicit boundary for quoted, archival, source-data, dependency,
+  and other third-party material: publication in this repository does not
+  relicense rights that DwellProof's maintainers and contributors do not hold.
+- Added `docs/NEXT-SESSION.md` as the concise restart point for the next work
+  session, including the verified baseline, remaining blockers, priorities, and
+  commands needed to resume safely.
+
+### Verification
+
+- Confirmed the root MIT text, npm/Cargo metadata, and all repository rights
+  statements agree; no current `UNLICENSED` or inspection-only declaration
+  remains.
+- Traced the shared design-token block to the documented QueryForge and COFORGE
+  commits, retained the complete applicable license texts and modification
+  notice, and confirmed no other substantive QueryForge/COFORGE source copy.
+- Re-ran 77 core tests, 46 legacy safety regressions, Python compilation, both
+  official-source replay checks, npm audit, TypeScript checking, the production
+  static export, Rust formatting, and the locked Tauri build checks. All passed.
+- Rebuilt and verified the 2026-07-13 source manifest without changing the
+  2026-07-12 frozen manifest.
+
 ## 2026-07-13 - Professional workbench and local Tauri package
 
 - Rebuilt the frontend around a professional three-pane case workbench inspired
@@ -67,10 +98,9 @@ record outcomes and verification, not just intended tasks.
 - Recorded Codex (OpenAI) in `CONTRIBUTORS.md`; release commits use a matching
   `Co-authored-by` trailer so attribution is present in both the files and Git
   history.
-- Added contribution, sensitive-data reporting, and rights boundaries. No
-  open-source license is implied: public visibility permits inspection but does
-  not grant reuse, and archival or third-party-source material retains its own
-  rights.
+- The initial publication used an inspection-only rights boundary. That policy
+  was superseded later on 2026-07-13 by the repository's MIT License, while
+  archival and third-party-source material retained its own rights.
 - Removed workstation paths and unnecessary authentication/billing metadata
   from the public hand-off while preserving the material research limitation.
 - Scanned the exact candidate publication set with Gitleaks, TruffleHog, and

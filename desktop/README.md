@@ -12,7 +12,9 @@ Build a local macOS test distribution from the repository root:
 
 Expected outputs are under `desktop/dist/`: an ad-hoc-signed `.app`, a simple
 `.dmg`, `SHA256SUMS`, and `BUILD-INFO.txt`. They are ignored by Git because they
-are generated artifacts. Rust intermediates remain under `src-tauri/target/`.
+are generated artifacts. The application bundle includes the DwellProof MIT
+License and third-party notices under `Contents/Resources/licenses/`. Rust
+intermediates remain under `src-tauri/target/`.
 
 The current build is a presentation shell. It does not yet execute the Python
 accuracy core. That future boundary must use a fixed JSON protocol and a bundled,
