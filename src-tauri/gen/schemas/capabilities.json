@@ -1,0 +1,1 @@
+{"main-window":{"identifier":"main-window","description":"Static DwellProof workbench with no WebView access to the Tauri IPC layer.","local":true,"windows":["main"],"permissions":[]}}

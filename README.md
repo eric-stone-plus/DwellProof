@@ -16,6 +16,9 @@ actionable investment-advice system.
 - `web/` is a responsive Next.js workbench shell. Dependency audit, TypeScript
   checking, and the production build pass, but it is not yet connected to the
   Python core or live property evidence.
+- `src-tauri/` and `desktop/` package the static workbench in a Tauri 2 system
+  WebView for local macOS testing. The shell bundles no Chromium, Node server,
+  Python core, or Reasonix runtime and grants the WebView no Tauri IPC access.
 - `legacy/` retains the former prototype as a non-actionable archive. Its paths fail
   closed and its 46 regression tests pass. All 101 top-level Markdown reports
   and four HTML dashboards carry a visible non-actionable archive warning.
@@ -56,6 +59,10 @@ schedules recompute every row from the evidenced bank rate and repayment method;
 cash-flow analysis rejects evidence mixed across cases, properties, or borrowers.
 Missing borrower identity, conflicting reuse of an evidence ID across scenarios,
 and nonzero rates below the supported numerical precision fail closed.
+
+Reasonix is a possible future explanation and orchestration layer, not part of
+the current recommendation path. See
+`docs/decisions/ADR-0001-REASONIX-BOUNDARY.md` for the accepted boundary.
 
 ## Verified official-source baseline
 
@@ -110,6 +117,16 @@ npm audit
 npm run typecheck
 npm run build
 ```
+
+For a local x86_64 macOS test bundle on a compatible build host:
+
+```sh
+./desktop/build_macos.sh
+```
+
+This produces an ad-hoc-signed `.app` and DMG under the ignored
+`desktop/dist/` directory. They are local-test artifacts, not notarized public
+distribution packages.
 
 ## Repository and attribution
 

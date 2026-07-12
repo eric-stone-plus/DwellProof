@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "DwellProof",
+  "version": "0.1.0",
+  "identifier": "com.ericstone.dwellproof",
+  "build": {
+    "beforeDevCommand": "npm run dev -- --hostname 127.0.0.1",
+    "devUrl": "http://127.0.0.1:3000",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../web/out"
+  },
+  "app": {
+    "security": {
+      "csp": "default-src 'self' customprotocol: asset:; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+    },
+    "windows": [
+      {
+        "label": "main",
+        "title": "DwellProof",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 960,
+        "minHeight": 720,
+        "resizable": true,
+        "fullscreen": false,
+        "center": true,
+        "devtools": false
+      }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "category": "Business",
+    "copyright": "Copyright 2026 eric-stone-plus",
+    "shortDescription": "Evidence workbench for a specific second-hand home transaction.",
+    "longDescription": "A local-first, fail-closed evidence workbench for evaluating a specific second-hand home transaction in China.",
+    "targets": ["app"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "macOS": {
+      "minimumSystemVersion": "14.0"
+    }
+  }
+}

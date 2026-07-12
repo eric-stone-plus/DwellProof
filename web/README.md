@@ -14,6 +14,9 @@ npm run typecheck
 npm run build
 ```
 
+`npm run build` produces a static export in `web/out/`. The Tauri desktop shell
+embeds that directory directly; it does not start or bundle a Node.js server.
+
 The next integration step is to consume a signed calculation snapshot generated
 by the Python core. The frontend must not reimplement tax, loan, or cash-flow
 rules independently.

@@ -40,3 +40,18 @@ The QueryForge visual grammar maps to DwellProof as follows:
 
 The UI must never keep an old successful number visible after its source query
 fails without a prominent stale/error state.
+
+## Desktop shell
+
+The local desktop presentation shell uses Tauri 2 with the operating system
+WebView and a static Next.js export. It bundles no Chromium, Node.js server,
+Python runtime, or localhost listener. The current WebView receives no Tauri IPC
+permissions. The Python core will later be connected only through a narrow,
+versioned JSON sidecar protocol; the frontend will not receive generic shell or
+filesystem access.
+
+## Optional model layer
+
+Reasonix is intentionally deferred and non-authoritative. Its allowed and
+forbidden responsibilities, security prerequisites, and proposed read-only data
+flow are recorded in `docs/decisions/ADR-0001-REASONIX-BOUNDARY.md`.

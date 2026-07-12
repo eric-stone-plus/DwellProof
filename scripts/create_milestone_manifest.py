@@ -9,8 +9,13 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = Path("docs/manifests/MILESTONE-2026-07-12.sha256")
-MANIFEST_DIGEST = Path("docs/manifests/MILESTONE-2026-07-12.manifest.sha256")
+MILESTONE = "2026-07-13"
+MANIFEST = Path(f"docs/manifests/MILESTONE-{MILESTONE}.sha256")
+MANIFEST_DIGEST = Path(f"docs/manifests/MILESTONE-{MILESTONE}.manifest.sha256")
+ALL_MANIFESTS = {
+    path.relative_to(ROOT)
+    for path in (ROOT / "docs/manifests").glob("MILESTONE-*.sha256")
+}
 
 
 def digest(path: Path) -> str:
@@ -32,7 +37,7 @@ def main() -> int:
         Path(item.decode("utf-8"))
         for item in result.stdout.split(b"\0")
         if item
-        and Path(item.decode("utf-8")) not in {MANIFEST, MANIFEST_DIGEST}
+        and Path(item.decode("utf-8")) not in ALL_MANIFESTS | {MANIFEST, MANIFEST_DIGEST}
     )
     if any("\n" in str(path) for path in paths):
         raise RuntimeError("manifest does not support filenames containing newlines")

@@ -17,10 +17,16 @@ venv/
 # Frontend build output
 node_modules/
 .next/
+out/
 dist/
 build/
 coverage/
 *.tsbuildinfo
+
+# Rust and local desktop distribution output
+target/
+src-tauri/target/
+desktop/dist/
 
 # Local research/browser caches. Curated findings live under docs/.
 .firecrawl/

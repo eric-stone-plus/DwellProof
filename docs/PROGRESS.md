@@ -3,6 +3,63 @@
 This file is the durable hand-off for work completed in the repository. Entries
 record outcomes and verification, not just intended tasks.
 
+## 2026-07-13 - Professional workbench and local Tauri package
+
+- Rebuilt the frontend around a professional three-pane case workbench inspired
+  by COFORGE's interaction grammar: case/process rail, evidence-first central
+  workspace, and contextual provenance inspector. The six workspaces are case
+  overview, evidence, comparable valuation, cost and finance, risk and closing,
+  and decision memo.
+- Copied COFORGE's complete dark and light color token sets, brand gradient,
+  exact semantic success/warning/error surfaces, and established elevation
+  values. Removed the old green favicon and regenerated the desktop icon set
+  from the same blue-to-green brand source.
+- Kept the product fail closed: the demo case remains `0 / 7`, missing evidence
+  is amber rather than an error, verified rule snapshots are explicitly not
+  property evidence, and valuation, NPV, IRR, and directional advice stay
+  locked. Material selection records only filename, byte size, and intended
+  gate in memory; it does not read, upload, persist, or verify a file.
+- Added working anonymous case drafts, case search with `Cmd/Ctrl+K`, theme
+  memory, evidence selection, material staging, and evidence-gap printing.
+  Added modal focus containment, Escape/return focus, hidden inactive drawers,
+  responsive breakpoint recovery, 44 px mobile controls, semantic mobile model
+  and memo icons, and explicit status text.
+- Added a Tauri 2 desktop shell around the static Next.js export. The production
+  bundle uses the system WebView, starts no localhost server, bundles no Node,
+  Chromium, Python, or Reasonix runtime, and gives the current WebView an empty
+  Tauri IPC permission set. The future Python integration remains a narrow,
+  versioned JSON sidecar boundary.
+- Accepted Reasonix only as a deferred, non-authoritative explanation and
+  orchestration layer. Its read-only data flow, allowed tasks, prohibited
+  calculations and evidence mutations, and security prerequisites are frozen in
+  `docs/decisions/ADR-0001-REASONIX-BOUNDARY.md`.
+
+### Verification
+
+- Core tests: `77 / 77` passed; legacy fail-closed regressions: `46 / 46`
+  passed; Python compilation passed.
+- Official-source replay: archived national tax and PBC page hashes matched;
+  all five selected NBS city rows matched the official table.
+- Frontend: `npm audit` found zero vulnerabilities; TypeScript and production
+  static export passed. Browser QA covered both themes, all six workspaces,
+  search filtering/submission, 1440 x 900 desktop, 390 x 844 mobile, modal
+  focus/Escape behavior, and responsive drawers. Console result: zero errors
+  and zero warnings.
+- Desktop: `cargo check --locked`, Rust formatting, shell syntax, two complete
+  release builds, ad-hoc signature verification, DMG verification, and artifact
+  SHA-256 verification passed. The final local-test artifact is x86_64: static
+  export about 1.0 MB, app about 3.4 MB, and DMG about 2.1 MB.
+- The desktop artifact remains local-test only: it has no Developer ID,
+  hardened-runtime/public signing workflow, notarization, stapling, arm64, or
+  universal build. It must not be described or uploaded as a public macOS
+  release.
+- Gitleaks scanned the full working tree and reported only generated Next.js and
+  Rust cache values under ignored build directories. Common credential-pattern
+  scanning found no hit in the candidate source set; a staged-set scan is run
+  before publication.
+- Generated and verified the 2026-07-13 non-ignored source manifest under
+  `docs/manifests/`; the prior 2026-07-12 freeze remains unchanged.
+
 ## 2026-07-13 - Public repository preparation
 
 - Approved publication target: `https://github.com/eric-stone-plus/DwellProof`,
