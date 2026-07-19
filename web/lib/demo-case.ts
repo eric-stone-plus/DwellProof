@@ -182,3 +182,52 @@ export const scenarioRows = [
   { name: "基准", price: "0.0% / 年", vacancy: "1 个月", exit: "6 个月" },
   { name: "乐观", price: "+3.0% / 年", vacancy: "1 个月", exit: "3 个月" },
 ];
+
+/**
+ * Serialize the demo case into the read-only snapshot injected into the
+ * Reasonix prompt. Only repository constants are included — never local
+ * drafts, file names, or user-provided property data.
+ */
+export function buildCaseSnapshot(): string {
+  const lines: string[] = [
+    "案例: GZ-DEMO-001（受控演示，REV 0）",
+    "城市/区域: 广州/天河 · 建筑面积: 89 m2 · 演示要约: 520 万元 · 计划持有: 5 年 · 基准日: 2026-07-12",
+    "结论门槛: CLOSED（INSUFFICIENT_EVIDENCE，0/7 通过）",
+    "",
+    "七项准入检查:",
+  ];
+  for (const gate of evidenceGates) {
+    lines.push(
+      `- [${gate.code}] ${gate.title} · 状态: ${statusLabelsForSnapshot(gate.status)}`,
+      `  要求: ${gate.requirement}`,
+      `  原因: ${gate.reason}`,
+      `  最迟节点: ${gate.deadline} · 责任方: ${gate.owner}`,
+      `  可接受材料: ${gate.accepted.join("；")}`,
+    );
+  }
+  lines.push("", "已核验官方快照（只证明规则与城市背景，不证明本套房）:");
+  for (const source of officialSources) {
+    lines.push(
+      `- [${source.id}] ${source.title} · ${source.authority} · ${source.observed} · ${source.checked}`,
+      `  边界: ${source.boundary}`,
+    );
+  }
+  return lines.join("\n");
+}
+
+function statusLabelsForSnapshot(status: EvidenceStatus): string {
+  switch (status) {
+    case "verified":
+      return "已核实";
+    case "user_input":
+      return "待核验";
+    case "missing":
+      return "待补证";
+    case "stale":
+      return "已过期";
+    case "conflict":
+      return "存在冲突";
+    case "not_applicable":
+      return "不适用";
+  }
+}

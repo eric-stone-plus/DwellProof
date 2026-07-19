@@ -4,6 +4,20 @@ DwellProof is a local-first evidence workbench for evaluating a specific second-
 home transaction in China. Its intended output is an auditable investment memo,
 not a black-box buy/sell signal.
 
+## Status on 2026-07-19
+
+The workbench interface and brand icon were redesigned on 2026-07-19 around the
+minimal neutral workbench language of T3 Code (MIT, T3 Tools Inc.; see
+`THIRD_PARTY_NOTICES.md`): alpha-based neutral surfaces, an inset rounded
+main-stage card, a subtle grain texture, self-hosted DM Sans for Latin text,
+and a blue-violet accent that also drives `web/app/icon.svg` and the full
+`src-tauri/icons/` desktop set. This was a visual change only; the fail-closed
+behavior, accuracy contract, and release blockers below are unchanged.
+TypeScript checking and the production build pass after the redesign.
+
+The same day, the desktop shell gained the Reasonix shadow-mode integration
+described below and in ADR-0001; it changes no evidence behavior either.
+
 ## Status on 2026-07-13
 
 The repository has been reorganized around a fail-closed accuracy core and a new
@@ -18,7 +32,15 @@ actionable investment-advice system.
   Python core or live property evidence.
 - `src-tauri/` and `desktop/` package the static workbench in a Tauri 2 system
   WebView for local macOS testing. The shell bundles no Chromium, Node server,
-  Python core, or Reasonix runtime and grants the WebView no Tauri IPC access.
+  or Python core and grants the WebView no core or plugin Tauri IPC access.
+- Since 2026-07-19 the desktop shell also bundles the pinned Reasonix v1.17.11
+  runtime (SHA-256 verified at fetch, launch, and packaging) as a read-only
+  explanation layer over the demo case. It runs as an isolated ACP child with
+  no tools and no write access; responses without citations are not displayed.
+  It requires the user's own `DEEPSEEK_API_KEY` in the process environment and
+  explicit in-app consent, and can be disabled with
+  `DWELLPROOF_REASONIX_ENABLED=0`. See
+  `docs/decisions/ADR-0001-REASONIX-BOUNDARY.md`.
 - `legacy/` retains the former prototype as a non-actionable archive. Its paths fail
   closed and its 46 regression tests pass. All 101 top-level Markdown reports
   and four HTML dashboards carry a visible non-actionable archive warning.

@@ -31,6 +31,18 @@ cd "$ROOT"
 
 npm --prefix web run typecheck
 npm --prefix web audit
+python3 scripts/fetch_reasonix_runtime.py
+
+REASONIX_RUNTIME_DIR="$ROOT/desktop/.runtime/reasonix-v1.17.11-$( [[ "$HOST_ARCH" == "arm64" ]] && echo darwin-arm64 || echo darwin-x64 )"
+REASONIX_BIN="$REASONIX_RUNTIME_DIR/reasonix"
+REASONIX_LICENSE="$REASONIX_RUNTIME_DIR/LICENSE.reasonix"
+for f in "$REASONIX_BIN" "$REASONIX_LICENSE"; do
+  if [[ ! -f "$f" || -L "$f" || ! -s "$f" ]]; then
+    echo "Missing or invalid Reasonix runtime resource: $f" >&2
+    exit 1
+  fi
+done
+
 cargo tauri build --bundles app -- --locked
 
 test -d "$TARGET_BUNDLE" || { echo "Expected app bundle not found: $TARGET_BUNDLE" >&2; exit 1; }
@@ -38,6 +50,19 @@ test -d "$TARGET_BUNDLE" || { echo "Expected app bundle not found: $TARGET_BUNDL
 rm -rf "$DIST"
 mkdir -p "$DIST"
 ditto "$TARGET_BUNDLE" "$APP"
+
+# Bundle the pinned Reasonix runtime; re-verify its SHA-256 inside the bundle
+# before signing so a corrupted copy can never ship.
+ditto "$REASONIX_BIN" "$APP/Contents/Resources/reasonix"
+ditto "$REASONIX_LICENSE" "$APP/Contents/Resources/LICENSE.reasonix"
+REASONIX_EXPECTED_SHA="$(shasum -a 256 "$REASONIX_BIN" | awk '{print $1}')"
+REASONIX_BUNDLED_SHA="$(shasum -a 256 "$APP/Contents/Resources/reasonix" | awk '{print $1}')"
+if [[ "$REASONIX_EXPECTED_SHA" != "$REASONIX_BUNDLED_SHA" ]]; then
+  echo "Bundled Reasonix SHA-256 mismatch" >&2
+  exit 1
+fi
+echo "Bundled Reasonix v1.17.11 (sha256: $REASONIX_BUNDLED_SHA)"
+
 codesign --force --deep --sign - "$APP"
 codesign --verify --deep --strict --verbose=2 "$APP"
 
@@ -85,7 +110,7 @@ Desktop shell: Tauri 2 / system WebView
 WebView IPC permissions: none
 Signing: local ad-hoc only
 Notarization: not configured
-Reasonix: not bundled
+Reasonix: bundled v1.17.11 (pinned, sha256-verified); read-only shadow mode; requires DEEPSEEK_API_KEY at runtime
 Python core: not connected in this presentation shell
 EOF
 

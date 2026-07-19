@@ -26,6 +26,7 @@ type SharedProps = {
   onWorkspaceChange: (workspace: WorkspaceId) => void;
   onUpload: () => void;
   onPrint: () => void;
+  onAskAssistant?: (question: string) => void;
   pendingCount: number;
   sources: OfficialSource[];
 };
@@ -53,7 +54,13 @@ function WorkspaceHeader({
   );
 }
 
-function DecisionGate({ onUpload }: { onUpload: () => void }) {
+function DecisionGate({
+  onUpload,
+  onAskAssistant,
+}: {
+  onUpload: () => void;
+  onAskAssistant?: (question: string) => void;
+}) {
   return (
     <section className="decision-gate" aria-labelledby="decision-gate-title">
       <div className="decision-icon"><LockIcon /></div>
@@ -65,6 +72,15 @@ function DecisionGate({ onUpload }: { onUpload: () => void }) {
       <div className="decision-actions">
         <code>INSUFFICIENT_EVIDENCE</code>
         <button className="button-primary" type="button" onClick={onUpload}><UploadIcon />继续补证</button>
+        {onAskAssistant && (
+          <button
+            className="button-secondary"
+            type="button"
+            onClick={() => onAskAssistant("请解释当前七项准入检查各自的缺口，并按交易风险给出最优先的三件事。")}
+          >
+            <SparkIcon />解释缺口
+          </button>
+        )}
       </div>
     </section>
   );
@@ -80,7 +96,7 @@ function OverviewPanel(props: SharedProps) {
         description="广州 · 天河演示标的 · 基准日 2026-07-12 · 所有金额均为未核演示输入"
         action={<StatusChip status="user_input" label="演示案例" />}
       />
-      <DecisionGate onUpload={props.onUpload} />
+      <DecisionGate onUpload={props.onUpload} onAskAssistant={props.onAskAssistant} />
 
       <section className="readiness-grid" aria-label="分析完整度">
         <article>
@@ -291,7 +307,7 @@ function MemoPanel(props: SharedProps) {
         description="当前只允许导出证据缺口报告，不输出方向性投资结论。"
         action={<button className="button-secondary" type="button" onClick={props.onPrint}><FileIcon />打印缺口报告</button>}
       />
-      <DecisionGate onUpload={props.onUpload} />
+      <DecisionGate onUpload={props.onUpload} onAskAssistant={props.onAskAssistant} />
       <section className="memo-document panel-card">
         <div className="memo-document-header">
           <div><span>DwellProof / GZ-DEMO-001</span><strong>受控原型证据缺口报告</strong></div>

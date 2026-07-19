@@ -1,12 +1,14 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { AssistantPanel } from "@/components/assistant-panel";
 import { CaseDialog, type LocalCaseDraft } from "@/components/case-dialog";
 import { CaseRail } from "@/components/case-rail";
 import { ContextInspector, type PendingFile } from "@/components/context-inspector";
 import {
   AlertIcon,
   BookIcon,
+  BrandIcon,
   CalculatorIcon,
   HomeIcon,
   MenuIcon,
@@ -20,6 +22,7 @@ import { StatusChip, StatusDot } from "@/components/status";
 import { SearchDialog } from "@/components/search-dialog";
 import { WorkspacePanel } from "@/components/workspace-panels";
 import { evidenceGates, officialSources, workspaces, type WorkspaceId } from "@/lib/demo-case";
+import { isDesktopRuntime } from "@/lib/reasonix-bridge";
 import { useOverlayFocus } from "@/lib/use-overlay-focus";
 
 type Theme = "light" | "dark";
@@ -37,6 +40,9 @@ export default function Home() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [railOverlay, setRailOverlay] = useState(false);
   const [inspectorOverlay, setInspectorOverlay] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [assistantOpen, setAssistantOpen] = useState(false);
+  const [assistantPreset, setAssistantPreset] = useState<{ question: string; nonce: number } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const workspaceContentRef = useRef<HTMLDivElement>(null);
   const railContainerRef = useRef<HTMLDivElement>(null);
@@ -55,6 +61,7 @@ export default function Home() {
     const initial = saved === "light" || saved === "dark" ? saved : "dark";
     setTheme(initial);
     document.documentElement.dataset.theme = initial;
+    setIsDesktop(isDesktopRuntime());
   }, []);
 
   useEffect(() => () => {
@@ -118,6 +125,11 @@ export default function Home() {
   }, [theme]);
 
   const requestUpload = useCallback(() => fileInputRef.current?.click(), []);
+
+  const askAssistant = useCallback((question: string) => {
+    setAssistantPreset({ question, nonce: Date.now() });
+    setAssistantOpen(true);
+  }, []);
 
   const isMobileNavActive = useCallback((id: WorkspaceId) => {
     if (id === "evidence") return workspace === "evidence" || workspace === "risks";
@@ -232,7 +244,7 @@ export default function Home() {
         <header className="topbar">
           <div className="topbar-left">
             <button className="icon-button mobile-only" type="button" onClick={() => setRailOpen(true)} aria-label="打开案例导航"><MenuIcon /></button>
-            <span className="mobile-brand"><HomeIcon /></span>
+            <span className="mobile-brand"><BrandIcon /></span>
             <div className="case-context">
               <span className="desktop-only">受控原型 / </span>
               <strong>广州 · 天河演示</strong>
@@ -285,6 +297,7 @@ export default function Home() {
             onWorkspaceChange={changeWorkspace}
             onUpload={requestUpload}
             onPrint={handlePrint}
+            onAskAssistant={isDesktop ? askAssistant : undefined}
             pendingCount={pendingFiles.length}
             sources={officialSources}
           />
@@ -328,6 +341,13 @@ export default function Home() {
       </div>
 
       <CaseDialog open={caseDialogOpen} onClose={() => setCaseDialogOpen(false)} onCreate={handleCreateCase} />
+      {isDesktop && (
+        <AssistantPanel
+          open={assistantOpen}
+          preset={assistantPreset}
+          onClose={() => setAssistantOpen(false)}
+        />
+      )}
       <SearchDialog
         open={searchOpen}
         gates={evidenceGates}

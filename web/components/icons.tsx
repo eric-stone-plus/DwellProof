@@ -19,6 +19,16 @@ function IconBase({ children, ...props }: IconProps) {
   );
 }
 
+export function BrandIcon(props: IconProps) {
+  return (
+    <IconBase strokeWidth="2" {...props}>
+      <path d="m4 11.5 8-7.6 8 7.6" />
+      <path d="M6.6 9.4V19h10.8V9.4" />
+      <path d="m9.4 14.4 1.9 1.9 3.4-3.8" />
+    </IconBase>
+  );
+}
+
 export function HomeIcon(props: IconProps) {
   return <IconBase {...props}><path d="m3 11 9-8 9 8" /><path d="M5 10v10h14V10" /><path d="M9 20v-6h6v6" /></IconBase>;
 }

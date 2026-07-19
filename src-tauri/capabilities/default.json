@@ -1,7 +1,7 @@
 {
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "main-window",
-  "description": "Static DwellProof workbench with no WebView access to the Tauri IPC layer.",
+  "description": "DwellProof workbench. The only IPC surface is the two app-defined Reasonix commands; no core or plugin commands are exposed to the WebView.",
   "windows": ["main"],
   "permissions": []
 }

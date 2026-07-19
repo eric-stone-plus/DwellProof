@@ -1,6 +1,6 @@
 # ADR-0001: Reasonix remains an optional non-authoritative layer
 
-- Status: accepted for architecture; runtime integration deferred
+- Status: accepted for architecture; read-only shadow mode implemented 2026-07-19
 - Date: 2026-07-13
 
 ## Decision
@@ -61,3 +61,43 @@ inherited or persisted by default.
   cross-case leakage, citation, and deterministic-replay tests before exposure.
 - Any proposed write-capable or recommendation-capable integration requires a
   new ADR and a security review.
+
+## Shadow-mode implementation facts (2026-07-19)
+
+The first integration now ships in the desktop package, confined to the
+read-only shadow path described above:
+
+- The pinned upstream binary (`esengine/DeepSeek-Reasonix` v1.17.11, commit
+  `20a64b4d…`, MIT) is fetched by `scripts/fetch_reasonix_runtime.py`, verified
+  against fixed SHA-256 values at fetch time, before every launch
+  (`src-tauri/src/reasonix/manifest.rs`), and again inside the signed bundle by
+  `desktop/build_macos.sh`. The app never downloads a binary at startup and
+  never trusts a PATH-installed Reasonix.
+- The ACP v1 host is a Rust client (`src-tauri/src/reasonix/acp.rs`) inside the
+  Tauri process — no Node runtime is bundled. The child runs with an isolated
+  `REASONIX_HOME` (0700), an emptied workspace, a deny-all config with a
+  sentinel tool allowlist, and a filtered environment.
+- No MCP servers are registered. The model receives only the demo-case
+  snapshot serialized from repository constants plus the user's question. Any
+  tool-call update from the runtime is a policy violation that cancels the
+  turn; permission requests are always cancelled.
+- Responses that cite no known identifier (G01–G07, deed-tax, nbs-index, lpr)
+  are not displayed; the UI shows a refusal card instead. Token usage is not
+  reported by ACP v1, so the UI honestly marks it unavailable.
+- `DEEPSEEK_API_KEY` is read from the host process environment only, bridged
+  into `REASONIX_HOME/.env` (0600, exclusive create) for the lifetime of
+  session creation, and deleted immediately after. The desktop package stores
+  no credential.
+- First use requires explicit in-app consent noting that the question and the
+  demo snapshot leave the device for api.deepseek.com. Local draft cases and
+  uploaded file names are never included. `DWELLPROOF_REASONIX_ENABLED=0`
+  disables the integration entirely.
+- Audit records (`reasonix-audit.jsonl` in the app data directory) store only
+  timestamps, identifiers, outcome codes, and SHA-256 hashes — never content.
+- Deterministic replay tests with fixture binaries cover the ACP handshake,
+  streamed turns, prompt validation, and the tool-call policy violation path;
+  `cargo test --locked` passes without network or model access.
+
+Still deferred and requiring new ADRs: any MCP tool surface, real case
+material in prompts, keychain-managed credentials, budget accounting,
+recommendation-capable or write-capable behavior, and non-macOS packaging.

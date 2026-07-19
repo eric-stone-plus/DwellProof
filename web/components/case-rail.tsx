@@ -4,11 +4,11 @@ import type { EvidenceGate, WorkspaceId } from "@/lib/demo-case";
 import { workspaces } from "@/lib/demo-case";
 import {
   BookIcon,
+  BrandIcon,
   CalculatorIcon,
   ChartIcon,
   FileIcon,
   GridIcon,
-  HomeIcon,
   PlusIcon,
   ShieldIcon,
   SlidersIcon,
@@ -50,7 +50,7 @@ export function CaseRail({
   return (
     <aside className="case-rail">
       <div className="rail-brand">
-        <span className="brand-mark"><HomeIcon /></span>
+        <span className="brand-mark"><BrandIcon /></span>
         <span>
           <strong>DwellProof</strong>
           <small>住宅交易证据工作台</small>

@@ -40,3 +40,6 @@ legacy/alert_history.json
 legacy/backup/
 data/private/
 *.local.json
+
+# Pinned Reasonix runtime cache (fetched and SHA-256 verified by scripts/fetch_reasonix_runtime.py)
+desktop/.runtime/
